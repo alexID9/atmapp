@@ -1,9 +1,12 @@
+using System.Diagnostics.Metrics;
+
 namespace atmapp
 {
     public partial class Form1 : Form
     {
         private int setAmount = 666;
         private int setPass = 6666;
+        private int attempts = 0;
         public Form1()
         {
             InitializeComponent();
@@ -53,6 +56,16 @@ namespace atmapp
                 }
                 else if (!ExistingPin())
                 {
+                    attempts ++;
+                    if (attempts > 2) 
+                    {
+                        MessageBox.Show("too many wrong attempts");
+                        pinbox.Enabled = false;
+                        pinbox.Text = string.Empty;
+                        amountbox.Enabled = false;
+                        amountbox.Text = string.Empty;
+                        return;
+                    }
                     MessageBox.Show("wrong pin");
                 }
                 else if (!ExistingAmount())

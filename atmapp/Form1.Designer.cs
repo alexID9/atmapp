@@ -60,6 +60,7 @@
             // 
             // pinbox
             // 
+            pinbox.BackColor = SystemColors.Menu;
             pinbox.Location = new Point(59, 143);
             pinbox.Name = "pinbox";
             pinbox.PasswordChar = '$';
@@ -68,6 +69,7 @@
             // 
             // amountbox
             // 
+            amountbox.BackColor = SystemColors.Menu;
             amountbox.Location = new Point(59, 74);
             amountbox.Name = "amountbox";
             amountbox.Size = new Size(150, 31);
@@ -75,12 +77,14 @@
             // 
             // submitbtn
             // 
+            submitbtn.BackColor = Color.Khaki;
             submitbtn.Location = new Point(97, 208);
+            submitbtn.Margin = new Padding(0);
             submitbtn.Name = "submitbtn";
             submitbtn.Size = new Size(112, 34);
             submitbtn.TabIndex = 4;
             submitbtn.Text = "submit";
-            submitbtn.UseVisualStyleBackColor = true;
+            submitbtn.UseVisualStyleBackColor = false;
             submitbtn.Click += Submition;
             // 
             // amounterror
